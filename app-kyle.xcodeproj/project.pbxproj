@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		27B9A7BD2A1B572200B9C7FB /* app_kyleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B9A7BC2A1B572200B9C7FB /* app_kyleApp.swift */; };
+		27B9A7BF2A1B572200B9C7FB /* Entering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B9A7BE2A1B572200B9C7FB /* Entering.swift */; };
+		27B9A7C12A1B572300B9C7FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B9A7C02A1B572300B9C7FB /* Assets.xcassets */; };
+		27B9A7C42A1B572300B9C7FB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B9A7C32A1B572300B9C7FB /* Preview Assets.xcassets */; };
+		27B9A7CE2A1B572300B9C7FB /* app_kyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B9A7CD2A1B572300B9C7FB /* app_kyleTests.swift */; };
+		27B9A7D82A1B572300B9C7FB /* app_kyleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B9A7D72A1B572300B9C7FB /* app_kyleUITests.swift */; };
+		27B9A7DA2A1B572300B9C7FB /* app_kyleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B9A7D92A1B572300B9C7FB /* app_kyleUITestsLaunchTests.swift */; };
+		27D67B672A1CE05300200398 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D67B662A1CE05300200398 /* Main.swift */; };
+		27D67B6A2A1E47D800200398 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D67B692A1E47D800200398 /* Colors.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		27B9A7CA2A1B572300B9C7FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27B9A7B12A1B572200B9C7FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27B9A7B82A1B572200B9C7FB;
+			remoteInfo = "app-kyle";
+		};
+		27B9A7D42A1B572300B9C7FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27B9A7B12A1B572200B9C7FB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27B9A7B82A1B572200B9C7FB;
+			remoteInfo = "app-kyle";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		27B9A7B92A1B572200B9C7FB /* app-kyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "app-kyle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27B9A7BC2A1B572200B9C7FB /* app_kyleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app_kyleApp.swift; sourceTree = "<group>"; };
+		27B9A7BE2A1B572200B9C7FB /* Entering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entering.swift; sourceTree = "<group>"; };
+		27B9A7C02A1B572300B9C7FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		27B9A7C32A1B572300B9C7FB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		27B9A7C92A1B572300B9C7FB /* app-kyleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "app-kyleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27B9A7CD2A1B572300B9C7FB /* app_kyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app_kyleTests.swift; sourceTree = "<group>"; };
+		27B9A7D32A1B572300B9C7FB /* app-kyleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "app-kyleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27B9A7D72A1B572300B9C7FB /* app_kyleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app_kyleUITests.swift; sourceTree = "<group>"; };
+		27B9A7D92A1B572300B9C7FB /* app_kyleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app_kyleUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		27D67B662A1CE05300200398 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		27D67B682A1DF60800200398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		27D67B692A1E47D800200398 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		27B9A7B62A1B572200B9C7FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27B9A7C62A1B572300B9C7FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27B9A7D02A1B572300B9C7FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		27B9A7B02A1B572200B9C7FB = {
+			isa = PBXGroup;
+			children = (
+				27B9A7BB2A1B572200B9C7FB /* app-kyle */,
+				27B9A7CC2A1B572300B9C7FB /* app-kyleTests */,
+				27B9A7D62A1B572300B9C7FB /* app-kyleUITests */,
+				27B9A7BA2A1B572200B9C7FB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		27B9A7BA2A1B572200B9C7FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				27B9A7B92A1B572200B9C7FB /* app-kyle.app */,
+				27B9A7C92A1B572300B9C7FB /* app-kyleTests.xctest */,
+				27B9A7D32A1B572300B9C7FB /* app-kyleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		27B9A7BB2A1B572200B9C7FB /* app-kyle */ = {
+			isa = PBXGroup;
+			children = (
+				27D67B682A1DF60800200398 /* Info.plist */,
+				27B9A7BC2A1B572200B9C7FB /* app_kyleApp.swift */,
+				27B9A7BE2A1B572200B9C7FB /* Entering.swift */,
+				27D67B662A1CE05300200398 /* Main.swift */,
+				27B9A7C02A1B572300B9C7FB /* Assets.xcassets */,
+				27B9A7C22A1B572300B9C7FB /* Preview Content */,
+				27D67B692A1E47D800200398 /* Colors.swift */,
+			);
+			path = "app-kyle";
+			sourceTree = "<group>";
+		};
+		27B9A7C22A1B572300B9C7FB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				27B9A7C32A1B572300B9C7FB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		27B9A7CC2A1B572300B9C7FB /* app-kyleTests */ = {
+			isa = PBXGroup;
+			children = (
+				27B9A7CD2A1B572300B9C7FB /* app_kyleTests.swift */,
+			);
+			path = "app-kyleTests";
+			sourceTree = "<group>";
+		};
+		27B9A7D62A1B572300B9C7FB /* app-kyleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				27B9A7D72A1B572300B9C7FB /* app_kyleUITests.swift */,
+				27B9A7D92A1B572300B9C7FB /* app_kyleUITestsLaunchTests.swift */,
+			);
+			path = "app-kyleUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		27B9A7B82A1B572200B9C7FB /* app-kyle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27B9A7DD2A1B572300B9C7FB /* Build configuration list for PBXNativeTarget "app-kyle" */;
+			buildPhases = (
+				27B9A7B52A1B572200B9C7FB /* Sources */,
+				27B9A7B62A1B572200B9C7FB /* Frameworks */,
+				27B9A7B72A1B572200B9C7FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "app-kyle";
+			productName = "app-kyle";
+			productReference = 27B9A7B92A1B572200B9C7FB /* app-kyle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		27B9A7C82A1B572300B9C7FB /* app-kyleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27B9A7E02A1B572300B9C7FB /* Build configuration list for PBXNativeTarget "app-kyleTests" */;
+			buildPhases = (
+				27B9A7C52A1B572300B9C7FB /* Sources */,
+				27B9A7C62A1B572300B9C7FB /* Frameworks */,
+				27B9A7C72A1B572300B9C7FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27B9A7CB2A1B572300B9C7FB /* PBXTargetDependency */,
+			);
+			name = "app-kyleTests";
+			productName = "app-kyleTests";
+			productReference = 27B9A7C92A1B572300B9C7FB /* app-kyleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		27B9A7D22A1B572300B9C7FB /* app-kyleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27B9A7E32A1B572300B9C7FB /* Build configuration list for PBXNativeTarget "app-kyleUITests" */;
+			buildPhases = (
+				27B9A7CF2A1B572300B9C7FB /* Sources */,
+				27B9A7D02A1B572300B9C7FB /* Frameworks */,
+				27B9A7D12A1B572300B9C7FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27B9A7D52A1B572300B9C7FB /* PBXTargetDependency */,
+			);
+			name = "app-kyleUITests";
+			productName = "app-kyleUITests";
+			productReference = 27B9A7D32A1B572300B9C7FB /* app-kyleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27B9A7B12A1B572200B9C7FB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					27B9A7B82A1B572200B9C7FB = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					27B9A7C82A1B572300B9C7FB = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 27B9A7B82A1B572200B9C7FB;
+					};
+					27B9A7D22A1B572300B9C7FB = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 27B9A7B82A1B572200B9C7FB;
+					};
+				};
+			};
+			buildConfigurationList = 27B9A7B42A1B572200B9C7FB /* Build configuration list for PBXProject "app-kyle" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 27B9A7B02A1B572200B9C7FB;
+			productRefGroup = 27B9A7BA2A1B572200B9C7FB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				27B9A7B82A1B572200B9C7FB /* app-kyle */,
+				27B9A7C82A1B572300B9C7FB /* app-kyleTests */,
+				27B9A7D22A1B572300B9C7FB /* app-kyleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		27B9A7B72A1B572200B9C7FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27B9A7C42A1B572300B9C7FB /* Preview Assets.xcassets in Resources */,
+				27B9A7C12A1B572300B9C7FB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27B9A7C72A1B572300B9C7FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27B9A7D12A1B572300B9C7FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		27B9A7B52A1B572200B9C7FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27D67B672A1CE05300200398 /* Main.swift in Sources */,
+				27D67B6A2A1E47D800200398 /* Colors.swift in Sources */,
+				27B9A7BF2A1B572200B9C7FB /* Entering.swift in Sources */,
+				27B9A7BD2A1B572200B9C7FB /* app_kyleApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27B9A7C52A1B572300B9C7FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27B9A7CE2A1B572300B9C7FB /* app_kyleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27B9A7CF2A1B572300B9C7FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27B9A7DA2A1B572300B9C7FB /* app_kyleUITestsLaunchTests.swift in Sources */,
+				27B9A7D82A1B572300B9C7FB /* app_kyleUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		27B9A7CB2A1B572300B9C7FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27B9A7B82A1B572200B9C7FB /* app-kyle */;
+			targetProxy = 27B9A7CA2A1B572300B9C7FB /* PBXContainerItemProxy */;
+		};
+		27B9A7D52A1B572300B9C7FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27B9A7B82A1B572200B9C7FB /* app-kyle */;
+			targetProxy = 27B9A7D42A1B572300B9C7FB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		27B9A7DB2A1B572300B9C7FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		27B9A7DC2A1B572300B9C7FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		27B9A7DE2A1B572300B9C7FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"app-kyle/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "app-kyle/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = A;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kyle.app-kyle";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		27B9A7DF2A1B572300B9C7FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"app-kyle/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "app-kyle/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = A;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kyle.app-kyle";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		27B9A7E12A1B572300B9C7FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kyle.app-kyleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/app-kyle.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/app-kyle";
+			};
+			name = Debug;
+		};
+		27B9A7E22A1B572300B9C7FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kyle.app-kyleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/app-kyle.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/app-kyle";
+			};
+			name = Release;
+		};
+		27B9A7E42A1B572300B9C7FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kyle.app-kyleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "app-kyle";
+			};
+			name = Debug;
+		};
+		27B9A7E52A1B572300B9C7FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kyle.app-kyleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "app-kyle";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		27B9A7B42A1B572200B9C7FB /* Build configuration list for PBXProject "app-kyle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27B9A7DB2A1B572300B9C7FB /* Debug */,
+				27B9A7DC2A1B572300B9C7FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27B9A7DD2A1B572300B9C7FB /* Build configuration list for PBXNativeTarget "app-kyle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27B9A7DE2A1B572300B9C7FB /* Debug */,
+				27B9A7DF2A1B572300B9C7FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27B9A7E02A1B572300B9C7FB /* Build configuration list for PBXNativeTarget "app-kyleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27B9A7E12A1B572300B9C7FB /* Debug */,
+				27B9A7E22A1B572300B9C7FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27B9A7E32A1B572300B9C7FB /* Build configuration list for PBXNativeTarget "app-kyleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27B9A7E42A1B572300B9C7FB /* Debug */,
+				27B9A7E52A1B572300B9C7FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 27B9A7B12A1B572200B9C7FB /* Project object */;
+}
