@@ -39,11 +39,56 @@ struct Sidebar: View {
                 
                 menuColor
                 
+                VStack(alignment: .leading, spacing: 20) {
+                    userProfile
+                    Divider()
+                        .overlay(.white)
+                }
+                .padding(.top, 80)
+                .padding(.horizontal, 40)
+                
             }
             .frame(width: sidebarWidth)
             .offset(x: isSidebarVisible ? 0 : -sidebarWidth)
             .animation(.default, value: isSidebarVisible)
             Spacer()
+        }
+    }
+    var userProfile: some View {
+        
+        VStack(alignment: .leading) {
+            HStack {
+                Spacer()
+                Image("Placeholder2")
+                    .resizable()
+                    .frame(width: 75, height: 75, alignment: .center)
+                    .clipShape(Circle())
+                    .overlay {
+                        Circle().stroke(.white, lineWidth: 2)
+                    }
+                    .aspectRatio(3 / 2, contentMode: .fill)
+                    .shadow(radius: 4)
+                Spacer()
+            }
+            VStack(alignment: .leading) {
+                HStack() {
+                    Spacer()
+                    Text("Welcome")
+                        .foregroundColor(.white)
+                        .bold()
+                        .font(.largeTitle)
+                    Spacer()
+                }
+                HStack() {
+                    Spacer()
+                    Text("Kyle")
+                        .foregroundColor(.white)
+                        .bold()
+                        .font(.title3)
+                    Spacer()
+                }
+                
+            }
         }
     }
 }

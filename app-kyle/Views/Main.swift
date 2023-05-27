@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Main: View {
     @EnvironmentObject var appState: AppState
+    @Binding var notes: [Notes]
     
     @State private var isSidebarOpened = false
     @State private var message: String = ""
@@ -59,6 +60,6 @@ struct Main: View {
 
 struct Main_Previews: PreviewProvider {
     static var previews: some View {
-        Main()
+        Main(notes: .constant(Notes.sampleData))
     }
 }

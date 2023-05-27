@@ -18,11 +18,19 @@ class AppState: ObservableObject {
 @main
 struct app_kyleApp: App {
     @ObservedObject var appState = AppState(hasEntered: false)
+    @StateObject private var store = NoteStore()
     
     var body: some Scene {
         WindowGroup {
             if appState.hasEntered {
-                Main()
+                Main(notes: $store.notes)
+                    .task {
+                        do {
+                            try await store.load()
+                        } catch {
+                            fatalError(error.localizedDescription)
+                        }
+                    }
                     .environmentObject(appState)
             } else {
                 Entering()
