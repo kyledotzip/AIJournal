@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		279561AD2A206DED003512CA /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279561AC2A206DED003512CA /* Sidebar.swift */; };
 		27B9A7BD2A1B572200B9C7FB /* app_kyleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B9A7BC2A1B572200B9C7FB /* app_kyleApp.swift */; };
 		27B9A7BF2A1B572200B9C7FB /* Entering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B9A7BE2A1B572200B9C7FB /* Entering.swift */; };
 		27B9A7C12A1B572300B9C7FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B9A7C02A1B572300B9C7FB /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		279561AC2A206DED003512CA /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
 		27B9A7B92A1B572200B9C7FB /* app-kyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "app-kyle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B9A7BC2A1B572200B9C7FB /* app_kyleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app_kyleApp.swift; sourceTree = "<group>"; };
 		27B9A7BE2A1B572200B9C7FB /* Entering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entering.swift; sourceTree = "<group>"; };
@@ -76,6 +78,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		279561AB2A206C6E003512CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				27B9A7BE2A1B572200B9C7FB /* Entering.swift */,
+				27D67B662A1CE05300200398 /* Main.swift */,
+				279561AC2A206DED003512CA /* Sidebar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		27B9A7B02A1B572200B9C7FB = {
 			isa = PBXGroup;
 			children = (
@@ -101,8 +113,7 @@
 			children = (
 				27D67B682A1DF60800200398 /* Info.plist */,
 				27B9A7BC2A1B572200B9C7FB /* app_kyleApp.swift */,
-				27B9A7BE2A1B572200B9C7FB /* Entering.swift */,
-				27D67B662A1CE05300200398 /* Main.swift */,
+				279561AB2A206C6E003512CA /* Views */,
 				27B9A7C02A1B572300B9C7FB /* Assets.xcassets */,
 				27B9A7C22A1B572300B9C7FB /* Preview Content */,
 				27D67B692A1E47D800200398 /* Colors.swift */,
@@ -265,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				279561AD2A206DED003512CA /* Sidebar.swift in Sources */,
 				27D67B672A1CE05300200398 /* Main.swift in Sources */,
 				27D67B6A2A1E47D800200398 /* Colors.swift in Sources */,
 				27B9A7BF2A1B572200B9C7FB /* Entering.swift in Sources */,
