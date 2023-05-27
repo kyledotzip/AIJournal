@@ -104,7 +104,6 @@
 		27B9A7B02A1B572200B9C7FB = {
 			isa = PBXGroup;
 			children = (
-				279561B02A22426B003512CA /* Models */,
 				27B9A7BB2A1B572200B9C7FB /* app-kyle */,
 				27B9A7CC2A1B572300B9C7FB /* app-kyleTests */,
 				27B9A7D62A1B572300B9C7FB /* app-kyleUITests */,
@@ -125,6 +124,7 @@
 		27B9A7BB2A1B572200B9C7FB /* app-kyle */ = {
 			isa = PBXGroup;
 			children = (
+				279561B02A22426B003512CA /* Models */,
 				27D67B682A1DF60800200398 /* Info.plist */,
 				27B9A7BC2A1B572200B9C7FB /* app_kyleApp.swift */,
 				279561AB2A206C6E003512CA /* Views */,
