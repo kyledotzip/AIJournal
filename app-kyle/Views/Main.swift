@@ -10,6 +10,7 @@ import SwiftUI
 struct Main: View {
     @EnvironmentObject var appState: AppState
     
+    @State private var isSidebarOpened = false
     @State private var message: String = ""
     
     var body: some View {
@@ -19,7 +20,7 @@ struct Main: View {
             
             VStack(alignment: .leading) {
                 Button() {
-                    
+                    isSidebarOpened.toggle()
                 } label: {
                     Image("menu-icon")
                 }
@@ -47,14 +48,12 @@ struct Main: View {
                     } label: {
                     Image("send-icon")
                             .padding()
-                            .opacity(0.4)
+                            .opacity(0.3)
                     }
-                }
-                
+                }                
             }
-            
+            Sidebar(isSidebarVisible: $isSidebarOpened)
         }
-
     }
 }
 
