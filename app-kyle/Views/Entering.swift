@@ -21,7 +21,7 @@ struct Entering: View {
                     .foregroundColor(Color.white)
                     .position(x: 200,y: 200)
                 Button("Enter") {
-                    appState.hasEntered = true
+                    appState.toggleEnter()
                 }
                 .foregroundColor(.white)
                 .padding(.horizontal, 50)

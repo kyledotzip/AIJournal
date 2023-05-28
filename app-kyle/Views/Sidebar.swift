@@ -9,7 +9,11 @@ import SwiftUI
 
 struct Sidebar: View {
     
+    @EnvironmentObject var appState: AppState
+    
     @Binding var isSidebarVisible: Bool
+    @Binding var notes: [Notes]
+    
     var sidebarWidth = UIScreen.main.bounds.size.width * 0.7
     var menuColor: Color = Color(.init(red: 29 / 255, green: 29 / 255, blue: 29 / 255, alpha: 1))
     
@@ -43,9 +47,52 @@ struct Sidebar: View {
                     userProfile
                     Divider()
                         .overlay(.white)
+                        .padding(.horizontal, 30)
+                    List {
+                        Button() {
+                            appState.toggleNotesOff()
+                            isSidebarVisible.toggle()
+                            // Temporary
+                        } label: {
+                            Text("-Chat with AI-")
+                                .font(.title2)
+                                .foregroundColor(.white)
+                                .bold()
+                        }
+                        .frame(height: 40)
+                        .listRowBackground(menuColor)
+                        .listRowSeparatorTint(.white)
+                        ForEach(notes) { note in
+                            Button() {
+                                appState.toggleNotesOn()
+                                isSidebarVisible.toggle()
+                                // Temporary
+                            } label: {
+                                Text(note.title)
+                                    .font(.title2)
+                                    .foregroundColor(.white)
+                            }
+                            .frame(height: 40)
+                            .listRowBackground(menuColor)
+                            .listRowSeparatorTint(.white)
+                        }
+                        Button() {
+                            appState.toggleNotesOn()
+                            isSidebarVisible.toggle()
+                            // Temporary
+                        } label: {
+                            Text("+ New Chat")
+                                .font(.title3)
+                                .foregroundColor(.white)
+                        }
+                        .frame(height: 40)
+                        .listRowBackground(menuColor)
+                        .listRowSeparatorTint(.white)
+                    }
+                    .scrollContentBackground(.hidden)
+                    .listStyle(.plain)
                 }
                 .padding(.top, 80)
-                .padding(.horizontal, 40)
                 
             }
             .frame(width: sidebarWidth)
@@ -96,6 +143,6 @@ struct Sidebar: View {
 struct Sidebar_Previews: PreviewProvider {
     
     static var previews: some View {
-        Sidebar(isSidebarVisible: .constant(true))
+        Sidebar(isSidebarVisible: .constant(true), notes: .constant(Notes.sampleData))
     }
 }

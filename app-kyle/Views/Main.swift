@@ -9,12 +9,22 @@ import SwiftUI
 
 struct Main: View {
     @EnvironmentObject var appState: AppState
-    @Binding var notes: [Notes]
     
     @State private var isSidebarOpened = false
     @State private var message: String = ""
     
     var body: some View {
+        return Group {
+            if appState.notesPage {
+                NotesView()
+            }
+            else {
+                content
+            }
+        }
+    }
+    
+    var content: some View {
         ZStack(alignment: .topLeading) {
             Color(.black)
                 .ignoresSafeArea()
@@ -53,13 +63,15 @@ struct Main: View {
                     }
                 }                
             }
-            Sidebar(isSidebarVisible: $isSidebarOpened)
+            Sidebar(isSidebarVisible: $isSidebarOpened, notes: .constant(Notes.sampleData))
         }
     }
 }
 
 struct Main_Previews: PreviewProvider {
+
     static var previews: some View {
-        Main(notes: .constant(Notes.sampleData))
+        Main()
+            .environmentObject(AppState())
     }
 }
