@@ -44,7 +44,7 @@
 		279561AE2A224264003512CA /* NotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesModel.swift; sourceTree = "<group>"; };
 		279561B12A224489003512CA /* NoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteStore.swift; sourceTree = "<group>"; };
 		279561B32A23A677003512CA /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
-		27B9A7B92A1B572200B9C7FB /* app-kyle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "app-kyle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27B9A7B92A1B572200B9C7FB /* Journal AI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Journal AI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B9A7BC2A1B572200B9C7FB /* app_kyleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app_kyleApp.swift; sourceTree = "<group>"; };
 		27B9A7BE2A1B572200B9C7FB /* Entering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entering.swift; sourceTree = "<group>"; };
 		27B9A7C02A1B572300B9C7FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		27B9A7BA2A1B572200B9C7FB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				27B9A7B92A1B572200B9C7FB /* app-kyle.app */,
+				27B9A7B92A1B572200B9C7FB /* Journal AI.app */,
 				27B9A7C92A1B572300B9C7FB /* app-kyleTests.xctest */,
 				27B9A7D32A1B572300B9C7FB /* app-kyleUITests.xctest */,
 			);
@@ -180,7 +180,7 @@
 			);
 			name = "app-kyle";
 			productName = "app-kyle";
-			productReference = 27B9A7B92A1B572200B9C7FB /* app-kyle.app */;
+			productReference = 27B9A7B92A1B572200B9C7FB /* Journal AI.app */;
 			productType = "com.apple.product-type.application";
 		};
 		27B9A7C82A1B572300B9C7FB /* app-kyleTests */ = {
@@ -391,6 +391,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "Journal AI";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -444,6 +445,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "Journal AI";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -460,6 +462,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"app-kyle/Preview Content\"";
+				DEVELOPMENT_TEAM = 36W5RVMBPV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "app-kyle/Info.plist";
@@ -475,7 +478,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyle.app-kyle";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Journal AI";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -491,6 +494,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"app-kyle/Preview Content\"";
+				DEVELOPMENT_TEAM = 36W5RVMBPV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "app-kyle/Info.plist";
@@ -506,7 +510,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kyle.app-kyle";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Journal AI";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

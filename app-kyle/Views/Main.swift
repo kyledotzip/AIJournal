@@ -63,7 +63,7 @@ struct Main: View {
                     }
                 }                
             }
-            Sidebar(isSidebarVisible: $isSidebarOpened, notes: .constant(Notes.sampleData))
+            Sidebar(isSidebarVisible: $isSidebarOpened, notes: .constant(Notes.sampleData), title: .constant(""), text: .constant(""))
         }
     }
 }
