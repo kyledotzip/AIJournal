@@ -30,50 +30,46 @@ struct NotesView: View {
                 } label: {
                     Image("menu-icon")
                 }
+                GeometryReader { _ in
                     VStack {
-                        TextEditor(text: $noteState.title)
-                            .font(.largeTitle)
-                            .foregroundColor(.white)
-                            .bold()
-                            .scrollContentBackground(.hidden)
-                            .placeholder(when: noteState.title.isEmpty) {
-                                Text("Title")
-                                    .foregroundStyle(LinearGradient(
-                                        colors: [.gray, .darkgray], startPoint: .leading, endPoint: .trailing
-                                    ))
-                                    .opacity(0.7)
+                                TextEditor(text: $noteState.title)
                                     .font(.largeTitle)
-                                    .offset(x: 5)
-                        }
-                        Divider()
-                            .overlay(.gray)
-                            .padding(.horizontal, 10)
-                        TextEditor(text: $noteState.text)
-                            .frame(height: 625)
-                            .font(.title2)
-                            .foregroundColor(.white)
-                            .scrollContentBackground(.hidden)
-                            .toolbar {
-                                    ToolbarItemGroup(placement: .keyboard) {
-                                                Button("Close") {
-                                                    hideKeyboard()
-                                                }
-                                            }
-                                        }
-                            .placeholder(when: noteState.text.isEmpty) {
-                                Text("Put your thoughts here...")
-                                    .foregroundStyle(LinearGradient(
-                                        colors: [.gray, .darkgray], startPoint: .leading, endPoint: .trailing
-                                    ))
-                                    .opacity(0.7)
+                                    .foregroundColor(.white)
+                                    .bold()
+                                    .scrollContentBackground(.hidden)
+                                    .placeholder(when: noteState.title.isEmpty) {
+                                        Text("Title")
+                                            .foregroundStyle(LinearGradient(
+                                                colors: [.gray, .darkgray], startPoint: .leading, endPoint: .trailing
+                                            ))
+                                            .opacity(0.7)
+                                            .font(.largeTitle)
+                                            .offset(x: 5)
+                                }
+                                Divider()
+                                    .overlay(.gray)
+                                    .padding(.horizontal, 10)
+                                TextEditor(text: $noteState.text)
+                                    .frame(height: 585)
                                     .font(.title2)
-                                    .offset(x: 5,y: -290)
-                            }
-                        }
+                                    .foregroundColor(.white)
+                                    .scrollContentBackground(.hidden)
+                                    .placeholder(when: noteState.text.isEmpty) {
+                                        Text("Put your thoughts here...")
+                                            .foregroundStyle(LinearGradient(
+                                                colors: [.gray, .darkgray], startPoint: .leading, endPoint: .trailing
+                                            ))
+                                            .opacity(0.7)
+                                            .font(.title2)
+                                            .offset(x: 5,y: -290)
+                                    }
+                    }
+                }
             }
             .ignoresSafeArea(.keyboard)
             Sidebar(isSidebarVisible: $isSidebarOpened, notes: .constant(Notes.sampleData), title: $title, text: $text)
         }
+        .ignoresSafeArea(.keyboard)
     }
 
 }
