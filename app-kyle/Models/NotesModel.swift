@@ -25,7 +25,7 @@ extension Notes {
     
     static var newNote: Notes {
         
-        Notes(title: "Title", text: "")
+        Notes(title: "", text: "")
         
     }
     

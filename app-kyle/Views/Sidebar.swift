@@ -10,6 +10,7 @@ import SwiftUI
 struct Sidebar: View {
     
     @EnvironmentObject var appState: AppState
+    @EnvironmentObject var noteState: NoteState
     
     @Binding var isSidebarVisible: Bool
     @Binding var notes: [Notes]
@@ -66,8 +67,8 @@ struct Sidebar: View {
                         .listRowSeparatorTint(.white)
                         ForEach(notes) { note in
                             Button() {
-                                title = note.title
-                                text = note.text
+                                noteState.title = note.title
+                                noteState.text = note.text
                                 appState.toggleNotesOn()
                                 isSidebarVisible.toggle()
                                 // Temporary
@@ -148,6 +149,7 @@ struct Sidebar_Previews: PreviewProvider {
     
     static var previews: some View {
         Sidebar(isSidebarVisible: .constant(true), notes: .constant(Notes.sampleData), title: .constant(""), text: .constant(""))
+            .environmentObject(NoteState())
     }
 }
 

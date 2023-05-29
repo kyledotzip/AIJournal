@@ -12,9 +12,12 @@ import UIKit
 
 struct NotesView: View {
     
+   
+    @State private var isSidebarOpened = false
+    
+    @EnvironmentObject var noteState: NoteState
     @State private var title = ""
     @State private var text = ""
-    @State private var isSidebarOpened = false
     
 
     var body: some View {
@@ -27,14 +30,13 @@ struct NotesView: View {
                 } label: {
                     Image("menu-icon")
                 }
-                ScrollView {
                     VStack {
-                        TextEditor(text: $title)
+                        TextEditor(text: $noteState.title)
                             .font(.largeTitle)
                             .foregroundColor(.white)
                             .bold()
                             .scrollContentBackground(.hidden)
-                            .placeholder(when: title.isEmpty) {
+                            .placeholder(when: noteState.title.isEmpty) {
                                 Text("Title")
                                     .foregroundStyle(LinearGradient(
                                         colors: [.gray, .darkgray], startPoint: .leading, endPoint: .trailing
@@ -46,7 +48,7 @@ struct NotesView: View {
                         Divider()
                             .overlay(.gray)
                             .padding(.horizontal, 10)
-                        TextEditor(text: $text)
+                        TextEditor(text: $noteState.text)
                             .frame(height: 625)
                             .font(.title2)
                             .foregroundColor(.white)
@@ -58,7 +60,7 @@ struct NotesView: View {
                                                 }
                                             }
                                         }
-                            .placeholder(when: text.isEmpty) {
+                            .placeholder(when: noteState.text.isEmpty) {
                                 Text("Put your thoughts here...")
                                     .foregroundStyle(LinearGradient(
                                         colors: [.gray, .darkgray], startPoint: .leading, endPoint: .trailing
@@ -68,19 +70,17 @@ struct NotesView: View {
                                     .offset(x: 5,y: -290)
                             }
                         }
-                    }
-            }
-            .onTapGesture {
-                
             }
             .ignoresSafeArea(.keyboard)
             Sidebar(isSidebarVisible: $isSidebarOpened, notes: .constant(Notes.sampleData), title: $title, text: $text)
         }
     }
+
 }
 
 struct NotesView_Previews: PreviewProvider {
     static var previews: some View {
         NotesView()
+            .environmentObject(NoteState())
     }
 }

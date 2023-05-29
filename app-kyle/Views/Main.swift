@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Main: View {
     @EnvironmentObject var appState: AppState
+    @EnvironmentObject var noteState: NoteState
     
     @State private var isSidebarOpened = false
     @State private var message: String = ""
@@ -73,5 +74,6 @@ struct Main_Previews: PreviewProvider {
     static var previews: some View {
         Main()
             .environmentObject(AppState())
+            .environmentObject(NoteState())
     }
 }

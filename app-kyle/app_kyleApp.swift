@@ -39,9 +39,30 @@ class AppState: ObservableObject {
     
 }
 
+class NoteState: ObservableObject {
+    @Published var title: String
+    @Published var text: String
+    
+    init() {
+        self.title = ""
+        self.text = ""
+    }
+    
+    init(title: String, text: String) {
+        self.title = title
+        self.text = text
+    }
+    func updateNotes(title: String, text: String) {
+        self.title = title
+        self.text = text
+    }
+}
+    
+
 @main
 struct app_kyleApp: App {
     @ObservedObject var appState = AppState(hasEntered: false, notesPage: false)
+    @ObservedObject var noteState = NoteState(title: "", text: "")
     @StateObject private var store = NoteStore()
     
     var body: some Scene {
@@ -56,9 +77,11 @@ struct app_kyleApp: App {
                         }
                     }
                     .environmentObject(appState)
+                    .environmentObject(noteState)
             } else {
                 Entering()
                     .environmentObject(appState)
+                    .environmentObject(noteState)
             }
 
 
