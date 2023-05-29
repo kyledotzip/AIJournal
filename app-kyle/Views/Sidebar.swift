@@ -86,7 +86,7 @@ struct Sidebar: View {
                             isSidebarVisible.toggle()
                             // Temporary new chat functionality
                         } label: {
-                            Text("+ New Chat")
+                            Text("+ New Note")
                                 .font(.title3)
                                 .foregroundColor(.white)
                         }
