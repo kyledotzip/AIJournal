@@ -21,6 +21,7 @@
 		27D67B672A1CE05300200398 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D67B662A1CE05300200398 /* Main.swift */; };
 		27D67B6A2A1E47D800200398 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D67B692A1E47D800200398 /* Colors.swift */; };
 		27DD63BB2A31C076006F614C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DD63BA2A31C076006F614C /* Constants.swift */; };
+		27F8A70A2A31C46D002ED55E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 27F8A7092A31C46D002ED55E /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		27D67B682A1DF60800200398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		27D67B692A1E47D800200398 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		27DD63BA2A31C076006F614C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		27F8A7092A31C46D002ED55E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		27B9A7B02A1B572200B9C7FB = {
 			isa = PBXGroup;
 			children = (
+				27F8A7092A31C46D002ED55E /* .gitignore */,
 				27B9A7BB2A1B572200B9C7FB /* app-kyle */,
 				27B9A7CC2A1B572300B9C7FB /* app-kyleTests */,
 				27B9A7D62A1B572300B9C7FB /* app-kyleUITests */,
@@ -129,14 +132,14 @@
 		27B9A7BB2A1B572200B9C7FB /* app-kyle */ = {
 			isa = PBXGroup;
 			children = (
-				27DD63BA2A31C076006F614C /* Constants.swift */,
-				279561B02A22426B003512CA /* Models */,
 				27D67B682A1DF60800200398 /* Info.plist */,
-				27B9A7BC2A1B572200B9C7FB /* app_kyleApp.swift */,
 				279561AB2A206C6E003512CA /* Views */,
-				27B9A7C02A1B572300B9C7FB /* Assets.xcassets */,
+				279561B02A22426B003512CA /* Models */,
 				27B9A7C22A1B572300B9C7FB /* Preview Content */,
+				27B9A7C02A1B572300B9C7FB /* Assets.xcassets */,
 				27D67B692A1E47D800200398 /* Colors.swift */,
+				27DD63BA2A31C076006F614C /* Constants.swift */,
+				27B9A7BC2A1B572200B9C7FB /* app_kyleApp.swift */,
 			);
 			path = "app-kyle";
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27B9A7C42A1B572300B9C7FB /* Preview Assets.xcassets in Resources */,
+				27F8A70A2A31C46D002ED55E /* .gitignore in Resources */,
 				27B9A7C12A1B572300B9C7FB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
