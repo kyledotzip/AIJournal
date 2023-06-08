@@ -6,15 +6,17 @@
 //
 
 import SwiftUI
-
+import Combine
 struct Main: View {
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var noteState: NoteState
     
     @State private var isSidebarOpened = false
     @State private var message: String = ""
-    @State private var chatmessages: [Message] = Message.sampleMessages
+    @State private var chatmessages: [Message] = []
     
+    let openAIService = OpenAIService()
+    @State var cancellables = Set<AnyCancellable>()
     var body: some View {
         return Group {
             if appState.notesPage {
@@ -45,8 +47,8 @@ struct Main: View {
                         ForEach(chatmessages, id: \.id) { message in
                             messageView(message: message)
                         }
-                    }
-                }
+                    }.rotationEffect(.degrees(180))
+                }.rotationEffect(.degrees(180))
                 Spacer()
                 HStack() {
                     TextField("", text: $message)
@@ -56,12 +58,14 @@ struct Main: View {
                                     colors: [.gray, .darkgray], startPoint: .leading, endPoint: .trailing
                                 ))
                                 .opacity(0.7)
+                                .font(.title3)
                         }
                         .foregroundColor(.white)
                         .accentColor(.darkgray)
                         .background(Color.black)
                         .font(.title)
                         .padding()
+                        .disabled(isSidebarOpened)
                     Button() {
                         sendMessage()
                     } label: {
@@ -86,6 +90,20 @@ struct Main: View {
         }
     }
     func sendMessage() {
+        if message == "" {
+            return
+        }
+        let myMessage  = Message(id: UUID().uuidString, content: message, dateCreated: Date(), sender: .me)
+        chatmessages.append(myMessage)
+        openAIService.sendMessage(message: message).sink { completion in
+            
+        } receiveValue: { response in
+            guard let textResponse = response.choices.first?.text.trimmingCharacters(in: .whitespacesAndNewlines.union(.init(charactersIn: "\""))) else { return }
+            let gptMessage = Message(id: response.id, content: textResponse, dateCreated: Date(), sender: .gpt)
+            chatmessages.append(gptMessage)
+            
+        }
+        .store(in: &cancellables)
         message = ""
     }
 }
