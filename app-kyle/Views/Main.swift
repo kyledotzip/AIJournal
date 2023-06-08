@@ -13,6 +13,7 @@ struct Main: View {
     
     @State private var isSidebarOpened = false
     @State private var message: String = ""
+    @State private var chatmessages: [Message] = Message.sampleMessages
     
     var body: some View {
         return Group {
@@ -30,16 +31,22 @@ struct Main: View {
             Color(.black)
                 .ignoresSafeArea()
             
-            VStack(alignment: .leading) {
-                Button() {
-                    isSidebarOpened.toggle()
-                } label: {
-                    Image("menu-icon")
-                }
-                
-                Spacer()
-            }
             VStack() {
+                HStack() {
+                    Button() {
+                        isSidebarOpened.toggle()
+                    } label: {
+                        Image("menu-icon")
+                    }
+                    Spacer()
+                }
+                ScrollView {
+                    LazyVStack {
+                        ForEach(chatmessages, id: \.id) { message in
+                            messageView(message: message)
+                        }
+                    }
+                }
                 Spacer()
                 HStack() {
                     TextField("", text: $message)
@@ -56,7 +63,7 @@ struct Main: View {
                         .font(.title)
                         .padding()
                     Button() {
-                        
+                        sendMessage()
                     } label: {
                     Image("send-icon")
                             .padding()
@@ -66,6 +73,20 @@ struct Main: View {
             }
             Sidebar(isSidebarVisible: $isSidebarOpened, notes: .constant(Notes.sampleData), title: .constant(""), text: .constant(""))
         }
+    }
+    func messageView(message: Message) -> some View {
+        HStack {
+            if message.sender == .me { Spacer() }
+            Text(message.content)
+                .padding()
+                .background(message.sender == .me ? .blue.opacity(0.5) : .gray.opacity(0.4))
+                .foregroundColor(.white)
+                .cornerRadius(16)
+            if message.sender == .gpt { Spacer() }
+        }
+    }
+    func sendMessage() {
+        message = ""
     }
 }
 
