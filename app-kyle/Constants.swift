@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+
+enum Constants {
+    static let openAIAPIKey = "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"
+}
