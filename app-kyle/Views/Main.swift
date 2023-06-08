@@ -77,3 +77,24 @@ struct Main_Previews: PreviewProvider {
             .environmentObject(NoteState())
     }
 }
+
+struct Message {
+    let id : String
+    let content: String
+    let dateCreated: Date
+    let sender: MessageSender
+}
+
+enum MessageSender {
+    case me
+    case gpt
+}
+
+extension Message {
+    static let sampleMessages = [
+        Message(id: UUID().uuidString, content: "Sampel message from me", dateCreated: Date(), sender: .me),
+        Message(id: UUID().uuidString, content: "Sampel message from gpt", dateCreated: Date(), sender: .gpt),
+        Message(id: UUID().uuidString, content: "Sampel message from me", dateCreated: Date(), sender: .me),
+        Message(id: UUID().uuidString, content: "Sampel message from gpt", dateCreated: Date(), sender: .gpt),
+    ]
+}
