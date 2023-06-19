@@ -16,8 +16,9 @@ struct NotesView: View {
     @State private var isSidebarOpened = false
     
     @EnvironmentObject var noteState: NoteState
-    @State private var title = ""
-    @State private var text = ""
+    @Binding var notes: [Notes]
+    @Binding var note: Notes
+    @State private var test = ""
     
 
     var body: some View {
@@ -32,12 +33,12 @@ struct NotesView: View {
                 }
                 GeometryReader { _ in
                     VStack {
-                                TextEditor(text: $noteState.title)
+                                TextEditor(text: $note.title)
                                     .font(.largeTitle)
                                     .foregroundColor(.white)
                                     .bold()
                                     .scrollContentBackground(.hidden)
-                                    .placeholder(when: noteState.title.isEmpty) {
+                                    .placeholder(when: note.title.isEmpty) {
                                         Text("Title")
                                             .foregroundStyle(LinearGradient(
                                                 colors: [.gray, .darkgray], startPoint: .leading, endPoint: .trailing
@@ -46,15 +47,16 @@ struct NotesView: View {
                                             .font(.largeTitle)
                                             .offset(x: 5)
                                 }
+                                    .disabled(isSidebarOpened)
                                 Divider()
                                     .overlay(.gray)
                                     .padding(.horizontal, 10)
-                                TextEditor(text: $noteState.text)
+                                TextEditor(text: $note.text)
                                     .frame(height: 585)
                                     .font(.title2)
                                     .foregroundColor(.white)
                                     .scrollContentBackground(.hidden)
-                                    .placeholder(when: noteState.text.isEmpty) {
+                                    .placeholder(when: note.text.isEmpty) {
                                         Text("Put your thoughts here...")
                                             .foregroundStyle(LinearGradient(
                                                 colors: [.gray, .darkgray], startPoint: .leading, endPoint: .trailing
@@ -63,11 +65,12 @@ struct NotesView: View {
                                             .font(.title2)
                                             .offset(x: 5,y: -290)
                                     }
+                                    .disabled(isSidebarOpened)
                     }
                 }
             }
             .ignoresSafeArea(.keyboard)
-            Sidebar(isSidebarVisible: $isSidebarOpened, notes: .constant(Notes.sampleData), title: $title, text: $text)
+            Sidebar(isSidebarVisible: $isSidebarOpened, notes: $notes)
         }
         .ignoresSafeArea(.keyboard)
     }
@@ -76,7 +79,7 @@ struct NotesView: View {
 
 struct NotesView_Previews: PreviewProvider {
     static var previews: some View {
-        NotesView()
+        NotesView(notes: .constant(Notes.sampleData), note: .constant(Notes.sampleNote))
             .environmentObject(NoteState())
     }
 }

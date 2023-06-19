@@ -10,6 +10,9 @@ import Combine
 struct Main: View {
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var noteState: NoteState
+    @Environment(\.scenePhase) private var scenePhase
+    @Binding var notes: [Notes]
+    let saveAction: ()->Void
     
     @State private var isSidebarOpened = false
     @State private var message: String = ""
@@ -20,7 +23,8 @@ struct Main: View {
     var body: some View {
         return Group {
             if appState.notesPage {
-                NotesView()
+                NotesView(notes: $notes, note: .constant(Notes.sampleNote))
+                
             }
             else {
                 content
@@ -69,13 +73,13 @@ struct Main: View {
                     Button() {
                         sendMessage()
                     } label: {
-                    Image("send-icon")
+                        Image("send-icon")
                             .padding()
                             .opacity(0.3)
                     }
-                }                
+                }
             }
-            Sidebar(isSidebarVisible: $isSidebarOpened, notes: .constant(Notes.sampleData), title: .constant(""), text: .constant(""))
+            Sidebar(isSidebarVisible: $isSidebarOpened, notes: $notes)
         }
     }
     func messageView(message: Message) -> some View {
@@ -111,7 +115,7 @@ struct Main: View {
 struct Main_Previews: PreviewProvider {
 
     static var previews: some View {
-        Main()
+        Main(notes: .constant(Notes.sampleData), saveAction: {})
             .environmentObject(AppState())
             .environmentObject(NoteState())
     }

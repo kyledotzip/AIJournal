@@ -41,5 +41,6 @@ extension Notes {
         Notes(title: "This is my super super long title!", text: "Hello! :)")
     ]
     
+    static let sampleNote: Notes = Notes(title: "", text: "")
 }
 

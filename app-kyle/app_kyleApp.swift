@@ -68,7 +68,15 @@ struct app_kyleApp: App {
     var body: some Scene {
         WindowGroup {
             if appState.hasEntered {
-                Main()
+                Main(notes: $store.notes) {
+                    Task {
+                        do {
+                            try await store.save(notes: store.notes)
+                        } catch {
+                            fatalError(error.localizedDescription)
+                        }
+                    }
+                }
                     .task {
                         do {
                             try await store.load()
