@@ -9,7 +9,6 @@ import SwiftUI
 import Combine
 struct Main: View {
     @EnvironmentObject var appState: AppState
-    @EnvironmentObject var noteState: NoteState
     @Environment(\.scenePhase) private var scenePhase
     @Binding var notes: [Notes]
     let saveAction: ()->Void
@@ -20,66 +19,60 @@ struct Main: View {
     
     let openAIService = OpenAIService()
     @State var cancellables = Set<AnyCancellable>()
-    var body: some View {
-        return Group {
-            if appState.notesPage {
-                NotesView(notes: $notes, note: .constant(Notes.sampleNote))
-                
-            }
-            else {
-                content
-            }
-        }
-    }
     
-    var content: some View {
-        ZStack(alignment: .topLeading) {
-            Color(.black)
-                .ignoresSafeArea()
-            
-            VStack() {
-                HStack() {
-                    Button() {
-                        isSidebarOpened.toggle()
-                    } label: {
-                        Image("menu-icon")
-                    }
-                    Spacer()
-                }
-                ScrollView {
-                    LazyVStack {
-                        ForEach(chatmessages, id: \.id) { message in
-                            messageView(message: message)
+    var body: some View {
+        NavigationView {
+            ZStack(alignment: .topLeading) {
+                Color(.black)
+                    .ignoresSafeArea()
+                
+                VStack() {
+                    HStack() {
+                        Button() {
+                            isSidebarOpened.toggle()
+                        } label: {
+                            Image("menu-icon")
                         }
+                        Spacer()
+                    }
+                    ScrollView {
+                        LazyVStack {
+                            ForEach(chatmessages, id: \.id) { message in
+                                messageView(message: message)
+                            }
+                        }.rotationEffect(.degrees(180))
                     }.rotationEffect(.degrees(180))
-                }.rotationEffect(.degrees(180))
-                Spacer()
-                HStack() {
-                    TextField("", text: $message)
-                        .placeholder(when: message.isEmpty) {
-                            Text("What's on your mind?")
-                                .foregroundStyle(LinearGradient(
-                                    colors: [.gray, .darkgray], startPoint: .leading, endPoint: .trailing
-                                ))
-                                .opacity(0.7)
-                                .font(.title3)
-                        }
-                        .foregroundColor(.white)
-                        .accentColor(.darkgray)
-                        .background(Color.black)
-                        .font(.title)
-                        .padding()
-                        .disabled(isSidebarOpened)
-                    Button() {
-                        sendMessage()
-                    } label: {
-                        Image("send-icon")
+                    Spacer()
+                    HStack() {
+                        TextField("", text: $message)
+                            .placeholder(when: message.isEmpty) {
+                                Text("What's on your mind?")
+                                    .foregroundStyle(LinearGradient(
+                                        colors: [.gray, .darkgray], startPoint: .leading, endPoint: .trailing
+                                    ))
+                                    .opacity(0.7)
+                                    .font(.title3)
+                            }
+                            .foregroundColor(.white)
+                            .accentColor(.darkgray)
+                            .background(Color.black)
+                            .font(.title)
                             .padding()
-                            .opacity(0.3)
+                            .disabled(isSidebarOpened)
+                        Button() {
+                            sendMessage()
+                        } label: {
+                            Image("send-icon")
+                                .padding()
+                                .opacity(0.3)
+                        }
                     }
                 }
+                Sidebar(isSidebarVisible: $isSidebarOpened, notes: $notes)
             }
-            Sidebar(isSidebarVisible: $isSidebarOpened, notes: $notes)
+            .onChange(of: scenePhase) { phase in
+                if phase == .inactive { saveAction() }
+            }
         }
     }
     func messageView(message: Message) -> some View {
@@ -113,11 +106,10 @@ struct Main: View {
 }
 
 struct Main_Previews: PreviewProvider {
-
+    
     static var previews: some View {
         Main(notes: .constant(Notes.sampleData), saveAction: {})
             .environmentObject(AppState())
-            .environmentObject(NoteState())
     }
 }
 

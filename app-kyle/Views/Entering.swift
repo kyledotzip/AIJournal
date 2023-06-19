@@ -35,7 +35,7 @@ struct Entering: View {
                     .padding()
             }
         }
-
+        
     }
 }
 

@@ -10,7 +10,6 @@ import SwiftUI
 struct Sidebar: View {
     
     @EnvironmentObject var appState: AppState
-    @EnvironmentObject var noteState: NoteState
     
     @Binding var isSidebarVisible: Bool
     @Binding var notes: [Notes]
@@ -20,21 +19,21 @@ struct Sidebar: View {
     
     var body: some View {
         
-            ZStack() {
+        ZStack() {
+            
+            GeometryReader { _ in
+                EmptyView()
                 
-                GeometryReader { _ in
-                    EmptyView()
-                    
-                }
-                .background(.black.opacity(0.6))
-                .opacity(isSidebarVisible ? 1 : 0)
-                .animation(.easeInOut.delay(0.2), value: isSidebarVisible)
-                .onTapGesture {
-                    isSidebarVisible.toggle()
-                }
-                content
             }
-            .edgesIgnoringSafeArea(.all)
+            .background(.black.opacity(0.6))
+            .opacity(isSidebarVisible ? 1 : 0)
+            .animation(.easeInOut.delay(0.2), value: isSidebarVisible)
+            .onTapGesture {
+                isSidebarVisible.toggle()
+            }
+            content
+        }
+        .edgesIgnoringSafeArea(.all)
     }
     var content: some View {
         
@@ -49,54 +48,53 @@ struct Sidebar: View {
                     Divider()
                         .overlay(.white)
                         .padding(.horizontal, 30)
-                    NavigationView {
-                        List {
-                            Button() {
-                                appState.toggleNotesOff()
-                                isSidebarVisible.toggle()
-                                // Temporary -- pretty much not much to be done
-                            } label: {
-                                Text("-Chat with AI-")
-                                    .font(.title2)
-                                    .foregroundColor(.white)
-                                    .bold()
+                    
+                    List {
+                        Button() {
+                            isSidebarVisible.toggle()
+                            // Temporary -- pretty much not much to be done
+                        } label: {
+                            Text("-Chat with AI-")
+                                .font(.title2)
+                                .foregroundColor(.white)
+                                .bold()
+                        }
+                        .frame(height: 40)
+                        .listRowBackground(menuColor)
+                        .listRowSeparatorTint(.white)
+                        ForEach($notes) { $note in
+                            //appState.toggleNotesOn()
+                            NavigationLink(note.title) {
+                                NotesView(note: $note)
                             }
-                            .frame(height: 40)
-                            .listRowBackground(menuColor)
-                            .listRowSeparatorTint(.white)
-                            ForEach($notes) { $note in
-                                Button() {
-                                    appState.toggleNotesOn()
-                                    isSidebarVisible.toggle()
-                                    // Temporary
-                                } label: {
-                                    Text(note.title)
-                                        .font(.title2)
-                                        .foregroundColor(.white)
-                                }
-                                .frame(height: 40)
-                                .listRowBackground(menuColor)
-                                .listRowSeparatorTint(.white)
-                            }
-                            Button() {
-                                notes.append(Notes.newNote)
-                                appState.toggleNotesOn()
-                                isSidebarVisible.toggle()
-                                // Temporary new chat functionality
-                            } label: {
-                                Text("+ New Note")
-                                    .font(.title3)
-                                    .foregroundColor(.white)
-                            }
+                            .id("NotesLink")
+                            .foregroundColor(.white)
+                            .font(.title3)
+                            //isSidebarVisible.toggle()
+                            // Temporary
                             .frame(height: 40)
                             .listRowBackground(menuColor)
                             .listRowSeparatorTint(.white)
                         }
-                        .background(menuColor)
-                        .ignoresSafeArea()
-                        .scrollContentBackground(.hidden)
-                    .listStyle(.plain)
+                        Button() {
+                            notes.append(Notes.newNote)
+                            // appState.toggleNotesOn()
+                            // isSidebarVisible.toggle()
+                            // Temporary new chat functionality
+                        } label: {
+                            Text("+ New Note")
+                                .font(.title3)
+                                .foregroundColor(.white)
+                        }
+                        .frame(height: 40)
+                        .listRowBackground(menuColor)
+                        .listRowSeparatorTint(.white)
                     }
+                    .background(menuColor)
+                    .ignoresSafeArea()
+                    .scrollContentBackground(.hidden)
+                    .listStyle(.plain)
+                    
                 }
                 .padding(.top, 80)
                 
@@ -150,7 +148,6 @@ struct Sidebar_Previews: PreviewProvider {
     
     static var previews: some View {
         Sidebar(isSidebarVisible: .constant(true), notes: .constant(Notes.sampleData))
-            .environmentObject(NoteState())
     }
 }
 

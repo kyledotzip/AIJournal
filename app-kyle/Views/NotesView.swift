@@ -12,74 +12,78 @@ import UIKit
 
 struct NotesView: View {
     
-   
+    
     @State private var isSidebarOpened = false
     
-    @EnvironmentObject var noteState: NoteState
-    @Binding var notes: [Notes]
     @Binding var note: Notes
-    @State private var test = ""
     
-
+    @State private var title = ""
+    @State private var text = ""
+    
+    
     var body: some View {
+        
         ZStack {
             Color(.black)
                 .ignoresSafeArea()
             VStack(alignment: .leading) {
-                Button() {
-                    isSidebarOpened.toggle()
-                } label: {
-                    Image("menu-icon")
-                }
                 GeometryReader { _ in
                     VStack {
-                                TextEditor(text: $note.title)
+                        TextEditor(text: $title)
+                            .font(.largeTitle)
+                            .foregroundColor(.white)
+                            .bold()
+                            .scrollContentBackground(.hidden)
+                            .placeholder(when: title.isEmpty) {
+                                Text("Title")
+                                    .foregroundStyle(LinearGradient(
+                                        colors: [.gray, .darkgray], startPoint: .leading, endPoint: .trailing
+                                    ))
+                                    .opacity(0.7)
                                     .font(.largeTitle)
-                                    .foregroundColor(.white)
-                                    .bold()
-                                    .scrollContentBackground(.hidden)
-                                    .placeholder(when: note.title.isEmpty) {
-                                        Text("Title")
-                                            .foregroundStyle(LinearGradient(
-                                                colors: [.gray, .darkgray], startPoint: .leading, endPoint: .trailing
-                                            ))
-                                            .opacity(0.7)
-                                            .font(.largeTitle)
-                                            .offset(x: 5)
-                                }
-                                    .disabled(isSidebarOpened)
-                                Divider()
-                                    .overlay(.gray)
-                                    .padding(.horizontal, 10)
-                                TextEditor(text: $note.text)
-                                    .frame(height: 585)
+                                    .offset(x: 5)
+                            }
+                            .onChange(of: title) { newValue in
+                                note.title = title
+                            }
+                            .disabled(isSidebarOpened)
+                        Divider()
+                            .overlay(.gray)
+                            .padding(.horizontal, 10)
+                        TextEditor(text: $text)
+                            .frame(height: 585)
+                            .font(.title2)
+                            .foregroundColor(.white)
+                            .scrollContentBackground(.hidden)
+                            .placeholder(when: text.isEmpty) {
+                                Text("Put your thoughts here...")
+                                    .foregroundStyle(LinearGradient(
+                                        colors: [.gray, .darkgray], startPoint: .leading, endPoint: .trailing
+                                    ))
+                                    .opacity(0.7)
                                     .font(.title2)
-                                    .foregroundColor(.white)
-                                    .scrollContentBackground(.hidden)
-                                    .placeholder(when: note.text.isEmpty) {
-                                        Text("Put your thoughts here...")
-                                            .foregroundStyle(LinearGradient(
-                                                colors: [.gray, .darkgray], startPoint: .leading, endPoint: .trailing
-                                            ))
-                                            .opacity(0.7)
-                                            .font(.title2)
-                                            .offset(x: 5,y: -290)
-                                    }
-                                    .disabled(isSidebarOpened)
+                                    .offset(x: 5,y: -290)
+                            }
+                            .onChange(of: text) { newValue in
+                                note.text = text
+                            }
+                            .disabled(isSidebarOpened)
                     }
                 }
             }
             .ignoresSafeArea(.keyboard)
-            Sidebar(isSidebarVisible: $isSidebarOpened, notes: $notes)
+        }
+        .onAppear {
+            title = note.title
+            text = note.text
         }
         .ignoresSafeArea(.keyboard)
     }
-
+    
 }
 
 struct NotesView_Previews: PreviewProvider {
     static var previews: some View {
-        NotesView(notes: .constant(Notes.sampleData), note: .constant(Notes.sampleNote))
-            .environmentObject(NoteState())
+        NotesView(note: .constant(Notes.sampleNote))
     }
 }

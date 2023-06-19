@@ -12,7 +12,7 @@ extension Color {
     public static let darkblue = Color("DarkBlue")
     
     public static let darkgray = Color("Dark Gray")
-
-}
     
+}
+
 

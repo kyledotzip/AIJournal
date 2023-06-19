@@ -25,44 +25,12 @@ class AppState: ObservableObject {
         hasEntered = !hasEntered
     }
     
-    func toggleNotesOn() {
-        notesPage = true
-    }
-    
-    func toggleNotesOff() {
-        notesPage = false
-    }
-    
-    func toggleNotes() {
-        notesPage = !notesPage
-    }
-    
 }
 
-class NoteState: ObservableObject {
-    @Published var title: String
-    @Published var text: String
-    
-    init() {
-        self.title = ""
-        self.text = ""
-    }
-    
-    init(title: String, text: String) {
-        self.title = title
-        self.text = text
-    }
-    func updateNotes(title: String, text: String) {
-        self.title = title
-        self.text = text
-    }
-}
-    
 
 @main
 struct app_kyleApp: App {
     @ObservedObject var appState = AppState(hasEntered: false, notesPage: false)
-    @ObservedObject var noteState = NoteState(title: "", text: "")
     @StateObject private var store = NoteStore()
     
     var body: some Scene {
@@ -72,27 +40,27 @@ struct app_kyleApp: App {
                     Task {
                         do {
                             try await store.save(notes: store.notes)
+                            print("Saving saving saving")
                         } catch {
                             fatalError(error.localizedDescription)
                         }
                     }
                 }
-                    .task {
-                        do {
-                            try await store.load()
-                        } catch {
-                            fatalError(error.localizedDescription)
-                        }
+                .task {
+                    do {
+                        try await store.load()
+                        print("Shit got loaded fr")
+                    } catch {
+                        fatalError(error.localizedDescription)
                     }
-                    .environmentObject(appState)
-                    .environmentObject(noteState)
+                }
+                .environmentObject(appState)
             } else {
                 Entering()
                     .environmentObject(appState)
-                    .environmentObject(noteState)
             }
-
-
+            
+            
         }
     }
 }
@@ -102,12 +70,12 @@ extension View {
         when shouldShow: Bool,
         alignment: Alignment = .leading,
         @ViewBuilder placeholder: () -> Content) -> some View {
-
-        ZStack(alignment: alignment) {
-            placeholder().opacity(shouldShow ? 1 : 0)
-            self
+            
+            ZStack(alignment: alignment) {
+                placeholder().opacity(shouldShow ? 1 : 0)
+                self
+            }
         }
-    }
 }
 
 #if canImport(UIKit)
