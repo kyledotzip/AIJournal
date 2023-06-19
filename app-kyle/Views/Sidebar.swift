@@ -54,7 +54,7 @@ struct Sidebar: View {
                             isSidebarVisible.toggle()
                             // Temporary -- pretty much not much to be done
                         } label: {
-                            Text("-Chat with AI-")
+                            Text("Chat with AI")
                                 .font(.title2)
                                 .foregroundColor(.white)
                                 .bold()
@@ -75,6 +75,9 @@ struct Sidebar: View {
                             .frame(height: 40)
                             .listRowBackground(menuColor)
                             .listRowSeparatorTint(.white)
+                        }
+                        .onDelete { indexSet in
+                            notes.remove(atOffsets: indexSet)
                         }
                         Button() {
                             notes.append(Notes.newNote)
@@ -132,7 +135,7 @@ struct Sidebar: View {
                 }
                 HStack() {
                     Spacer()
-                    Text("Kyle")
+                    Text("User")
                         .foregroundColor(.white)
                         .bold()
                         .font(.title3)
